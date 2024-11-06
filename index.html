@@ -1,64 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Profissional</title>
-    
+    <head>
     <!-- Link para a fonte personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css"> <!-- Seu CSS -->
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site - GitHub Pages</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+            font-size: 36px;
+        }
+        p {
+            font-size: 20px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 12px 24px;
+            margin: 20px;
+            display: inline-block;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 18px;
+        }
+        #data-hora {
+            font-size: 24px;
+            margin-top: 20px;
+            color: red; /* Data e hora em vermelho */
+        }
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="container">
-            <h1>Bem-vindo ao meu site!</h1>
-            <p>Confira meus vídeos no YouTube, entre no meu Discord e participe dos confrontos personalizados.</p>
-        </div>
-    </header>
+    <h1>Bem-vindo ao meu site!</h1>
+    <p>Aqui estão alguns links úteis:</p>
 
-    <!-- Seção do YouTube -->
-    <section id="youtube">
-        <div class="container">
-            <h2>Assista no YouTube</h2>
-            <p>Confira meus vídeos mais recentes no canal.</p>
-            <a href="https://www.youtube.com/c/seu-canal" target="_blank">
-                <button>Ir para o Canal</button>
-            </a>
-        </div>
-    </section>
+    <!-- Exibição das imagens com links -->
+    <img src="20241105_234633.jpg" alt="Descrição da Imagem" style="width: 100%; height: auto;">
 
-    <!-- Seção do Discord -->
-    <section id="discord">
-        <div class="container">
-            <h2>Entre no meu Discord</h2>
-            <p>Junte-se à comunidade no Discord para eventos, torneios e mais.</p>
-            <a href="https://discord.gg/seu-link" target="_blank">
-                <button>Entrar no Discord</button>
-            </a>
-        </div>
-    </section>
 
-    <!-- Seção de Confrontos Personalizados -->
-    <section id="confrontos">
-        <div class="container">
-            <h2>Participe de Confrontos Personalizados</h2>
-            <p>Desafie outros jogadores em confrontos personalizados e ganhe prêmios!</p>
-            <a href="https://link-para-torneio-ou-formulario" target="_blank">
-                <button>Entrar no Confronto</button>
-            </a>
-        </div>
-    </section>
+    <!-- Link para o Discord -->
+    <a href="https://dsc.gg/familia-do-g7" target="_blank">Entre no meu Discord</a>
 
-    <!-- Rodapé -->
+    <!-- Link para o YouTube -->
+    <a href="https://youtube.com/@gabrimx7?si=CPabEcqtHx1YbOe3" target="_blank">Visite meu canal no YouTube</a>
+
+    <section class = "•">
+<h1 class="centro2">Vídeos</h1>
+        <iframe width="500" height="300" src="https://youtube.com/embed/WXtNOC-jO-k?si" frameborder="0" allowfullscreen></iframe>
+
+    <!-- Exibir a data e hora atuais -->
+    <div id="data-hora"></div>
+
     <footer>
-        <p>&copy; 2024 Meu Canal - Todos os direitos reservados.</p>
+        <p>Função De Datas Em Breve</p>
     </footer>
 
-    <!-- Link para o arquivo JS -->
-    <script src="assets/script.js"></script>
+    <script>
+        // Função para formatar a data e hora
+        function mostrarDataHora() {
+            const data = new Date();
+            const dia = data.getDate().toString().padStart(2, '0');
+            const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+            const ano = data.getFullYear();
+            const horas = data.getHours().toString().padStart(2, '0');
+            const minutos = data.getMinutes().toString().padStart(2, '0');
+            const segundos = data.getSeconds().toString().padStart(2, '0');
+            const horaFormatada = `${dia}/${mes}/${ano} - ${horas}:${minutos}:${segundos}`;
+
+            document.getElementById('data-hora').innerText = `Data E Hora Atual: ${horaFormatada}`;
+        }
+
+        // Atualizar a data e hora a cada segundo
+        setInterval(mostrarDataHora, 1000);
+
+        // Exibir a data e hora inicialmente
+        mostrarDataHora();
+
+    </script>
 </body>
 </html>
