@@ -1,3 +1,12 @@
+/* Aplica a fonte "Press Start 2P" ao corpo da página */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f0f0f0; /* Cor de fundo para melhorar a legibilidade */
+    color: #333; /* Cor do texto */
+    text-align: center;
+    padding: 20px;
+}
+
+h1, p {
+    font-family: 'Press Start 2P', cursive;
 }
