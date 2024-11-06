@@ -1,4 +1,4 @@
-/* Definições gerais */
+/* Definindo a fonte padrão */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,12 @@
 }
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #111;
-    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background-color: #111; /* Fundo preto */
+    color: #fff; /* Texto branco */
     line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
 
 .container {
@@ -20,49 +22,55 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #333;
-    padding: 20px 0;
-    text-align: center;
+    background-color: #222; /* Cor de fundo do cabeçalho */
+    padding: 40px 0;
+    color: #fff;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
+    font-family: 'Press Start 2P', cursive; /* Fonte de estilo gamer */
     margin-bottom: 10px;
 }
 
 p {
     font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
 /* Seções */
 section {
-    padding: 40px 0;
+    padding: 60px 0;
+    background-color: #333; /* Fundo de cada seção */
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
 }
 
 button {
-    background-color: #e63946;
+    background-color: #e63946; /* Cor do botão */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.2em;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #f1faee;
+    background-color: #f1faee; /* Cor ao passar o mouse */
 }
 
-/* Footer */
+/* Rodapé */
 footer {
-    background-color: #333;
-    padding: 20px 0;
+    background-color: #222;
+    padding: 20px;
     text-align: center;
     color: #888;
     font-size: 0.9em;
@@ -71,4 +79,15 @@ footer {
 footer a {
     color: #f1faee;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo Responsivo */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
 }
