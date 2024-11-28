@@ -1,3 +1,10 @@
+body {
+    background-image: url('assets/imagem/b7e9e7bef4ca6c2c5b0f6859ded7ba6e.jpg');
+    background-size: cover; /* Ajusta a imagem para preencher o fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+    background-position: center; /* Centraliza a imagem */
+
 /* Estilos gerais */
 body {
     font-family: 'Roboto', sans-serif;
