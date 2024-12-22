@@ -1,51 +1,44 @@
-/* Estilo Geral */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #000; /* Fundo preto */
-  color: #fff; /* Texto branco */
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenho Preto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #333;
+    }
+    svg {
+      margin-top: 20px;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desenho com Cor Preto</h1>
 
-/* Container central */
-.container {
-  max-width: 400px;
-  background: #fff; /* Fundo branco do container */
-  color: #000; /* Texto preto no container */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  margin: 50px auto;
-}
+  <!-- Desenho de um círculo preto -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="black" />
+  </svg>
 
-/* Título */
-h1 {
-  color: #fff; /* Texto branco no fundo preto */
-}
+  <!-- Desenho de um quadrado preto -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect x="10" y="10" width="80" height="80" fill="black" />
+  </svg>
 
-/* Botão */
-button {
-  background-color: #000; /* Fundo preto */
-  color: #fff; /* Texto branco */
-  border: 1px solid #fff; /* Borda branca */
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
+  <!-- Desenho de uma linha preta -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <line x1="10" y1="10" x2="90" y2="90" stroke="black" stroke-width="2" />
+  </svg>
 
-button:hover {
-  background-color: #fff; /* Fundo branco ao passar o mouse */
-  color: #000; /* Texto preto ao passar o mouse */
-}
-
-/* Alertas */
-.alert-success {
-  background-color: #d4edda;
-  color: #155724;
-  border-color: #c3e6cb;
-}
-
-.alert-danger {
-  background-color: #f8d7da;
-  color: #721c24;
-  border-color: #f5c6cb;
-}
+</body>
+</html>
