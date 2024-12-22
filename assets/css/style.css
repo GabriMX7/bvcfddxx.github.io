@@ -12,15 +12,8 @@ body {
 
 #sidebar-wrapper .list-group-item {
   border: none;
-  transition: background-color 0.2s, color 0.2s;
 }
 
-#sidebar-wrapper .list-group-item:hover {
-  background-color: #575757;
-  color: #fff;
-}
-
-/* Conteúdo Principal */
 #page-content-wrapper {
   flex: 1;
 }
