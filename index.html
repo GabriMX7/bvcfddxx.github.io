@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel de Jogo</title>
+  <title>Bio do Canal YouTube</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome (Ícones) -->
@@ -11,90 +11,64 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="d-flex" id="wrapper">
-    <!-- Barra Lateral -->
-    <div class="bg-dark text-white" id="sidebar-wrapper">
-      <div class="sidebar-heading text-center py-4">
-        <h3>Jogo Painel</h3>
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#stats" class="list-group-item list-group-item-action bg-dark text-white">
-          <i class="fas fa-chart-bar"></i> Estatísticas
-        </a>
-        <a href="#leaderboard" class="list-group-item list-group-item-action bg-dark text-white">
-          <i class="fas fa-trophy"></i> Tabela de Líderes
-        </a>
-        <a href="#settings" class="list-group-item list-group-item-action bg-dark text-white">
-          <i class="fas fa-cogs"></i> Configurações
-        </a>
-      </div>
-    </div>
+  <header class="bg-dark text-white text-center py-5">
+    <h1>Bem-vindo ao meu Canal do YouTube!</h1>
+    <p class="lead">Descubra conteúdo incrível e inscreva-se para mais!</p>
+    <a href="https://www.youtube.com/channel/SEU_CHANNEL_ID" class="btn btn-danger btn-lg" target="_blank">
+      <i class="fab fa-youtube"></i> Inscreva-se Agora!
+    </a>
+  </header>
 
-    <!-- Conteúdo Principal -->
-    <div id="page-content-wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container-fluid">
-          <button class="btn btn-dark" id="menu-toggle">Menu</button>
-          <h4 class="ms-3">Painel do Jogo</h4>
-        </div>
-      </nav>
-      <div class="container-fluid mt-4">
-        <!-- Estatísticas -->
-        <section id="stats">
-          <h2>Estatísticas do Jogo</h2>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card bg-primary text-white">
-                <div class="card-body">
-                  <h5 class="card-title">Vitórias</h5>
-                  <p class="card-text" id="win-count">0</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-success text-white">
-                <div class="card-body">
-                  <h5 class="card-title">Jogos Jogados</h5>
-                  <p class="card-text" id="games-played">0</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card bg-warning text-white">
-                <div class="card-body">
-                  <h5 class="card-title">Melhor Pontuação</h5>
-                  <p class="card-text" id="high-score">0</p>
-                </div>
-              </div>
+  <main class="container mt-5">
+    <!-- Sobre o Canal -->
+    <section id="about" class="text-center mb-5">
+      <h2>Sobre o Canal</h2>
+      <p>Compartilho vídeos sobre tecnologia, games e tutoriais. Inscreva-se para aprender e se divertir!</p>
+    </section>
+
+    <!-- Estatísticas -->
+    <section id="stats" class="text-center mb-5">
+      <h2>Estatísticas</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card bg-primary text-white">
+            <div class="card-body">
+              <h5 class="card-title">Inscritos</h5>
+              <p class="card-text" id="subscriber-count">0</p>
             </div>
           </div>
-        </section>
-
-        <!-- Tabela de Líderes -->
-        <section id="leaderboard" class="mt-5">
-          <h2>Tabela de Líderes</h2>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Jogador</th>
-                <th>Pontuação</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboard-body">
-              <!-- Conteúdo gerado dinamicamente -->
-            </tbody>
-          </table>
-        </section>
-
-        <!-- Configurações -->
-        <section id="settings" class="mt-5">
-          <h2>Configurações</h2>
-          <button class="btn btn-danger" id="reset-game">Reiniciar Jogo</button>
-        </section>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-success text-white">
+            <div class="card-body">
+              <h5 class="card-title">Visualizações</h5>
+              <p class="card-text" id="view-count">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-warning text-white">
+            <div class="card-body">
+              <h5 class="card-title">Vídeos</h5>
+              <p class="card-text" id="video-count">0</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Últimos Vídeos -->
+    <section id="videos">
+      <h2 class="text-center mb-4">Últimos Vídeos</h2>
+      <div id="video-list" class="row">
+        <!-- Vídeos serão carregados dinamicamente -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 Meu Canal do YouTube. Todos os direitos reservados.</p>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
