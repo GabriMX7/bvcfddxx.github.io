@@ -1,57 +1,49 @@
-// Estatísticas Iniciais
-const stats = {
-  wins: 0,
-  gamesPlayed: 0,
-  highScore: 0,
-};
+const API_KEY = "YOUR_API_KEY"; // Substitua com sua API Key do YouTube
+const CHANNEL_ID = "SEU_CHANNEL_ID"; // Substitua pelo ID do seu canal
 
-// Atualizar Estatísticas
-function updateStats() {
-  document.getElementById("win-count").textContent = stats.wins;
-  document.getElementById("games-played").textContent = stats.gamesPlayed;
-  document.getElementById("high-score").textContent = stats.highScore;
+// Obter estatísticas do canal
+async function fetchChannelStats() {
+  const response = await fetch(
+    `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+  );
+  const data = await response.json();
+  const stats = data.items[0].statistics;
+
+  document.getElementById("subscriber-count").textContent = stats.subscriberCount;
+  document.getElementById("view-count").textContent = stats.viewCount;
+  document.getElementById("video-count").textContent = stats.videoCount;
 }
 
-// Gerar Tabela de Líderes
-function generateLeaderboard() {
-  const leaderboard = [
-    { rank: 1, player: "Jogador1", score: 1500 },
-    { rank: 2, player: "Jogador2", score: 1200 },
-    { rank: 3, player: "Jogador3", score: 1000 },
-  ];
+// Obter últimos vídeos
+async function fetchVideos() {
+  const response = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=3`
+  );
+  const data = await response.json();
+  const videos = data.items;
 
-  const tbody = document.getElementById("leaderboard-body");
-  tbody.innerHTML = "";
+  const videoList = document.getElementById("video-list");
+  videoList.innerHTML = "";
 
-  leaderboard.forEach((entry) => {
-    const row = `
-      <tr>
-        <td>${entry.rank}</td>
-        <td>${entry.player}</td>
-        <td>${entry.score}</td>
-      </tr>
+  videos.forEach((video) => {
+    const videoCard = `
+      <div class="col-md-4">
+        <div class="card">
+          <img src="${video.snippet.thumbnails.high.url}" class="card-img-top" alt="${video.snippet.title}">
+          <div class="card-body">
+            <h5 class="card-title">${video.snippet.title}</h5>
+            <p class="card-text">${video.snippet.description.substring(0, 100)}...</p>
+            <a href="https://www.youtube.com/watch?v=${video.id.videoId}" class="btn btn-primary" target="_blank">Assistir</a>
+          </div>
+        </div>
+      </div>
     `;
-    tbody.innerHTML += row;
+    videoList.innerHTML += videoCard;
   });
 }
 
-// Reiniciar Jogo
-document.getElementById("reset-game").addEventListener("click", () => {
-  stats.wins = 0;
-  stats.gamesPlayed = 0;
-  stats.highScore = 0;
-  updateStats();
-  alert("Jogo reiniciado!");
-});
-
-// Inicializar
+// Inicializar funções
 document.addEventListener("DOMContentLoaded", () => {
-  updateStats();
-  generateLeaderboard();
-});
-
-// Alternar Menu Lateral
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  const wrapper = document.getElementById("wrapper");
-  wrapper.classList.toggle("toggled");
+  fetchChannelStats();
+  fetchVideos();
 });
