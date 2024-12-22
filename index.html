@@ -3,89 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu TikTok - Profissional</title>
+  <title>Formulário de Contato</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="bg-dark text-white text-center py-5">
-    <h1>Bem-vindo ao Meu TikTok</h1>
-    <p class="lead">Os melhores vídeos e conteúdo criativo.</p>
-    <a href="https://www.tiktok.com/@SEU_USUARIO" class="btn btn-primary btn-lg" target="_blank">
-      <i class="fab fa-tiktok"></i> Siga-me no TikTok
-    </a>
-  </header>
+  <div class="container mt-5">
+    <h1 class="text-center">Entre em Contato</h1>
+    <p class="text-center">Preencha o formulário abaixo e responderemos em breve.</p>
 
-  <!-- Sobre Mim -->
-  <section class="container mt-5 text-center">
-    <h2>Sobre Mim</h2>
-    <p class="lead">
-      Sou um criador de conteúdo no TikTok, especializado em <strong>trends, dança e humor</strong>. 
-      Meu objetivo é entreter e inspirar milhões de seguidores ao redor do mundo.
-    </p>
-  </section>
-
-  <!-- Vídeos -->
-  <section class="container mt-5">
-    <h2 class="text-center">Meus Últimos Vídeos</h2>
-    <div id="videos" class="row mt-4">
-      <!-- Vídeos serão carregados dinamicamente -->
-    </div>
-  </section>
-
-  <!-- Parcerias -->
-  <section class="bg-light py-5 text-center">
-    <div class="container">
-      <h2>Parcerias</h2>
-      <p>
-        Interessado em colaborar? Entre em contato para parcerias de marca, campanhas publicitárias, ou projetos criativos.
-      </p>
-      <a href="#contato" class="btn btn-dark">Entre em Contato</a>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="container mt-5">
-    <h2 class="text-center">Contato</h2>
-    <form class="mt-4">
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Campo Nome -->
       <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+        <label for="nome" class="form-label">Nome Completo</label>
+        <input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu nome">
       </div>
+      <!-- Campo E-mail -->
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="Seu e-mail">
+        <input type="email" class="form-control" id="email" name="email" required placeholder="Digite seu e-mail">
       </div>
+      <!-- Campo Mensagem -->
       <div class="mb-3">
         <label for="mensagem" class="form-label">Mensagem</label>
-        <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua mensagem"></textarea>
+        <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <!-- Botão de Enviar -->
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
     </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p>&copy; 2024 Meu TikTok. Todos os direitos reservados.</p>
-    <p>
-      <a href="https://www.instagram.com/SEU_USUARIO" target="_blank" class="text-white me-3">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.twitter.com/SEU_USUARIO" target="_blank" class="text-white me-3">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.tiktok.com/@SEU_USUARIO" target="_blank" class="text-white">
-        <i class="fab fa-tiktok"></i>
-      </a>
-    </p>
-  </footer>
+    
+    <!-- Mensagem de Sucesso -->
+    <div id="success-message" class="alert alert-success mt-3 d-none" role="alert">
+      Obrigado por entrar em contato! Responderemos em breve.
+    </div>
+  </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para feedback -->
   <script src="scripts.js"></script>
 </body>
 </html>
